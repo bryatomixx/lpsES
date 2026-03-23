@@ -69,12 +69,11 @@ function LogoTrack({ items, reverse }: { items: LogoItem[]; reverse?: boolean })
                     width: "auto",
                     maxWidth: item.w,
                     objectFit: "contain",
-                    opacity: 0.65,
-                    filter: "brightness(0) invert(1)",
+                    opacity: 0.75,
                     transition: "opacity 0.3s",
                   }}
                   onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.opacity = "1")}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.65")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.opacity = "0.75")}
                 />
               ) : (
                 <span
