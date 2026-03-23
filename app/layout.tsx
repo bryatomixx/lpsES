@@ -44,10 +44,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://latinprimesystems.com"),
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/",
-      "es-US": "/es",
-    },
   },
   openGraph: {
     type: "website",
@@ -162,7 +158,7 @@ const jsonLd = [
         author: { "@type": "Person", name: "Jesús Martínez" },
         reviewBody:
           "Since we set up the AI voice agent, we haven't missed a single lead. Our close rate went up 40% in the first two months.",
-        datePublished: "2025-12",
+        datePublished: "2025-12-01",
       },
       {
         "@type": "Review",
@@ -170,7 +166,7 @@ const jsonLd = [
         author: { "@type": "Person", name: "Kerwin Iglesias" },
         reviewBody:
           "Within 30 days, the system had already recovered $4,200 in policies from dormant leads. The ROI was obvious in the first month.",
-        datePublished: "2025-11",
+        datePublished: "2025-11-01",
       },
       {
         "@type": "Review",
@@ -178,7 +174,7 @@ const jsonLd = [
         author: { "@type": "Person", name: "Berta Viloria" },
         reviewBody:
           "I handled 30% more clients this year with the same staff. Tax season automation changed everything.",
-        datePublished: "2026-01",
+        datePublished: "2026-01-01",
       },
     ],
     aggregateRating: {
@@ -309,6 +305,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#020508" />
         <meta name="color-scheme" content="dark" />
         <meta name="format-detection" content="telephone=no" />
+        {/* Geo targeting */}
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+        <meta name="ICBM" content="37.09024, -95.712891" />
         {/* GEO: Help AI assistants understand the entity */}
         <meta name="description" content="Latin Prime Systems — done-for-you AI automation agency. We deploy AI voice agents, CRM systems, and workflow automation for small businesses. $497–$1,497/month. 90-Day ROI Guarantee. Serving US and Latin America." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
