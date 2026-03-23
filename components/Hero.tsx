@@ -364,24 +364,38 @@ export default function Hero() {
               justifyContent: "center",
               position: "relative",
               willChange: "transform",
+              padding: "32px 24px 0 0",
             }}
-            initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, x: 70, y: 30, rotate: -6, scale: 0.85 }}
+            animate={{ opacity: 1, x: 0, y: 0, rotate: 0, scale: 1 }}
+            transition={{ duration: 1.1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="hero-robot-wrap"
           >
-            {/* Glow rings — CSS animations (GPU compositor, no JS) */}
-            <div style={{
-              position: "absolute", width: "85%", height: "85%",
-              borderRadius: "50%", border: "1px solid rgba(26,127,212,0.2)",
-              pointerEvents: "none", animation: "glow-pulse 4s ease-in-out infinite",
-            }} />
-            <div style={{
-              position: "absolute", width: "100%", height: "100%",
-              borderRadius: "50%", border: "1px solid rgba(200,148,26,0.12)",
-              pointerEvents: "none", animation: "glow-pulse 4s ease-in-out infinite 0.5s",
-            }} />
-            <div
+            {/* Glow rings — staggered fade-in after robot arrives */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.1 }}
+              style={{
+                position: "absolute", width: "85%", height: "85%",
+                borderRadius: "50%", border: "1px solid rgba(26,127,212,0.2)",
+                pointerEvents: "none", animation: "glow-pulse 4s ease-in-out infinite",
+              }}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 1.3 }}
+              style={{
+                position: "absolute", width: "100%", height: "100%",
+                borderRadius: "50%", border: "1px solid rgba(200,148,26,0.12)",
+                pointerEvents: "none", animation: "glow-pulse 4s ease-in-out infinite 0.5s",
+              }}
+            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
               style={{
                 position: "absolute",
                 width: "65%",
@@ -407,7 +421,7 @@ export default function Hero() {
                   maxWidth: 520,
                   height: "auto",
                   objectFit: "contain",
-                  filter: "drop-shadow(0 20px 60px rgba(26,127,212,0.3))",
+                  filter: "drop-shadow(0 20px 60px rgba(26,127,212,0.35))",
                 }}
                 priority
               />
