@@ -32,7 +32,7 @@ const plans: Plan[] = [
       "Everything you need to capture leads and automate follow-up from day 1 — without hiring anyone.",
     price: "$497",
     priceSub: "/mo",
-    setup: "+ one-time setup fee",
+    setup: "+ $997 one-time setup fee",
     ideal:
       "Best for: Local businesses, solo operators, and service providers taking their first step into automation.",
     featured: false,
@@ -55,14 +55,50 @@ const plans: Plan[] = [
     ],
   },
   {
+    tier: "Pro",
+    tagline:
+      "Multichannel automation and unlimited flows — your leads captured everywhere, your operation running itself.",
+    price: "$997",
+    priceSub: "/mo",
+    setup: "+ $1,497 one-time setup fee",
+    ideal:
+      "Best for: Growing businesses ready to automate across every channel and stop relying on manual follow-up.",
+    featured: false,
+    badge: "Best Value",
+    guarantee:
+      "🛡️ If in 45 days you don't see a measurable improvement in lead response or time saved, we work for free until you do.",
+    cta: "Get Started",
+    ctaHref: BOOKING_URL,
+    features: [
+      "Everything in Starter — unlimited pipelines & flows",
+      { section: "── UNLIMITED AUTOMATIONS ──" },
+      "Unlimited custom automations — your entire back-office handled automatically",
+      "Advanced AI chat — connected to CRM, qualifies leads and books appointments",
+      "Sales pipeline with automatic nurturing — today's cold lead is tomorrow's client",
+      "Calendar integration + automatic reminders — zero no-shows",
+      "Dormant client reactivation — recover revenue sitting in your database",
+      { section: "── MULTICHANNEL ──" },
+      "Facebook Lead Ads → CRM — every lead enters automatically, zero manual work",
+      "Automated Instagram DMs — turn comments and messages into qualified leads",
+      "WhatsApp Business API — reach clients where they respond most",
+      "Complete sales funnel — landing page, form, follow-up, all connected",
+      { section: "── REPUTATION & PAYMENTS ──" },
+      "Reputation management — automated review requests, dominate Google Business",
+      "Stripe integrated — collect deposits, payments and subscriptions from the same system",
+      { section: "── SUPPORT ──" },
+      "Priority support — response within 8h",
+      "Bi-weekly performance report — see exactly what's converting",
+    ],
+  },
+  {
     tier: "Growth",
     tagline:
-      "Your entire operation running on its own — while you focus on growing.",
+      "Your entire operation running on its own — with an AI that answers every call, closes leads, and works 24/7.",
     price: "$1,497",
     priceSub: "/mo",
-    setup: "+ one-time setup fee",
+    setup: "+ $1,997 one-time setup fee",
     ideal:
-      "Best for: Growing businesses ready to stop losing leads and eliminate manual work across their entire operation.",
+      "Best for: Businesses serious about never losing a lead — where an AI voice agent handles every call while you focus on closing.",
     featured: true,
     badge: "Most Popular",
     guarantee:
@@ -70,29 +106,16 @@ const plans: Plan[] = [
     cta: "Get Started",
     ctaHref: GROWTH_PAYMENT,
     features: [
-      "Everything in Starter — unlimited pipelines & flows",
+      "Everything in Pro — as your automation base",
       { section: "── AI VOICE AGENT ──" },
       "Answers every inbound call 24/7 — never lose a lead for not picking up",
       "Qualifies leads with custom questions — only ready prospects reach you",
       "Books appointments directly into your calendar — no confirmation calls needed",
       "Automatically calls new leads — the first to contact wins, and that's you",
-      { section: "── UNLIMITED AUTOMATIONS ──" },
-      "Unlimited automations — your entire operation runs itself while you close",
-      "Advanced AI chat — connected to CRM, voice agent & automations in one system",
-      "Sales pipeline with automatic nurturing — today's cold lead is tomorrow's client",
-      "Dormant client reactivation campaign — recover revenue you already had",
-      "Calendar integration + automatic reminders — zero no-shows",
-      { section: "── MULTICHANNEL ──" },
-      "Facebook Lead Ads connected to your CRM — every lead enters automatically",
-      "Automated Instagram DMs — turn messages and comments into qualified leads",
-      "WhatsApp Business API — reach clients where they respond most",
-      "Complete sales funnel — page, form, follow-up, all connected",
       { section: "── AI CONTENT ──" },
       "AI-generated sales emails — converting sequences, written automatically",
       "Personalized follow-up copy — every lead gets the right message at the right time",
-      "Reputation management — review requests on autopilot, dominate Google Business",
-      { section: "── PAYMENTS & REPORTING ──" },
-      "Stripe integrated — collect deposits, payments and subscriptions from the same system",
+      { section: "── REPORTING ──" },
       "Automatic reporting dashboard — see exactly how much each channel generates",
       { section: "── SUPPORT ──" },
       "Priority support — response within 4h",
@@ -208,7 +231,7 @@ export default function Pricing() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
             gap: 2,
             alignItems: "start",
           }}
@@ -458,8 +481,8 @@ export default function Pricing() {
             }}
           >
             All plans include a free strategy call before you commit. No long-term
-            contracts — cancel anytime. Setup fees are quoted during your consultation
-            based on scope.
+            contracts — cancel anytime. Setup fee is paid once at the start — it covers
+            full system build, configuration, and launch.
           </p>
         </SectionReveal>
       </div>

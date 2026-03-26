@@ -11,6 +11,7 @@ import Process from "@/components/Process";
 import About from "@/components/About";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
+import AlaCartePricing from "@/components/AlaCartePricing";
 import PlanGuide from "@/components/PlanGuide";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
@@ -69,7 +70,11 @@ export default function Home() {
         <FAQ />
         <div className="gdiv" />
 
-        {/* 13. Plan guide */}
+        {/* 13. À la carte */}
+        <AlaCartePricing />
+        <div className="gdiv" />
+
+        {/* 14. Plan guide */}
         <PlanGuide />
         <div className="gdiv" />
 
