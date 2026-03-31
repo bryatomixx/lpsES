@@ -214,6 +214,7 @@ export default function ROICalculator() {
               <div style={{ display: "flex", gap: 8 }}>
                 {[
                   { label: "Starter", val: 497 },
+                  { label: "Pro", val: 997 },
                   { label: "Growth", val: 1497 },
                 ].map((p) => (
                   <button
@@ -380,7 +381,7 @@ export default function ROICalculator() {
                 {
                   label: "Plan cost",
                   value: -plan,
-                  sub: `${plan === 497 ? "Starter" : "Growth"} plan`,
+                  sub: `${plan === 497 ? "Starter" : plan === 997 ? "Pro" : "Growth"} plan`,
                   color: "var(--text-dim)",
                 },
               ].map((item, i) => (
