@@ -11,7 +11,6 @@ const navLinks = [
   { href: "#who", label: "Who We Serve" },
   { href: "#process", label: "How It Works" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -123,16 +122,19 @@ export default function Nav() {
               fontSize: "0.78rem",
               letterSpacing: "0.02em",
               textDecoration: "none",
-              transition: "all 0.2s",
+              transition: "all 0.25s",
+              boxShadow: "0 0 18px rgba(26,127,212,0.25)",
             }}
-            className="hidden md:inline-flex items-center"
+            className="hidden md:inline-flex items-center btn-glow"
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "#2290e8";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+              (e.currentTarget as HTMLElement).style.background = "var(--blue-bright)";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(26,127,212,0.5)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.background = "var(--blue)";
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 18px rgba(26,127,212,0.25)";
             }}
           >
             Book a Demo

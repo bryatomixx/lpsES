@@ -48,16 +48,17 @@ export default function Hero() {
         <div
           style={{
             position: "absolute",
-            top: "20%",
-            left: "10%",
-            width: "60vw",
-            height: "60vw",
-            maxWidth: 700,
-            maxHeight: 700,
+            top: "10%",
+            left: "5%",
+            width: "65vw",
+            height: "65vw",
+            maxWidth: 800,
+            maxHeight: 800,
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(26,127,212,0.10) 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(26,127,212,0.14) 0%, transparent 70%)",
             pointerEvents: "none",
-            filter: "blur(60px)",
+            filter: "blur(70px)",
+            animation: "glow-pulse 6s ease-in-out infinite",
           }}
         />
 
@@ -79,14 +80,15 @@ export default function Hero() {
             position: "absolute",
             bottom: "5%",
             right: "2%",
-            width: "40vw",
-            height: "40vw",
-            maxWidth: 500,
-            maxHeight: 500,
+            width: "45vw",
+            height: "45vw",
+            maxWidth: 600,
+            maxHeight: 600,
             background:
-              "radial-gradient(circle, rgba(200,148,26,0.06) 0%, transparent 70%)",
+              "radial-gradient(circle, rgba(200,148,26,0.10) 0%, transparent 70%)",
             pointerEvents: "none",
-            filter: "blur(40px)",
+            filter: "blur(50px)",
+            animation: "glow-pulse 8s ease-in-out infinite 1s",
           }}
         />
 
@@ -283,22 +285,24 @@ export default function Hero() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
-                    padding: "15px 30px",
+                    padding: "16px 34px",
                     background: "var(--blue)",
                     color: "white",
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontWeight: 700,
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     letterSpacing: "0.02em",
                     textDecoration: "none",
-                    boxShadow: "0 0 0 rgba(26,127,212,0)",
-                    transition: "box-shadow 0.25s",
+                    boxShadow: "0 0 25px rgba(26,127,212,0.3), 0 4px 20px rgba(26,127,212,0.2)",
+                    transition: "all 0.25s",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(26,127,212,0.45)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 45px rgba(26,127,212,0.6), 0 12px 40px rgba(26,127,212,0.35)";
+                    (e.currentTarget as HTMLElement).style.background = "var(--blue-bright)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 0 rgba(26,127,212,0)";
+                    (e.currentTarget as HTMLElement).style.boxShadow = "0 0 25px rgba(26,127,212,0.3), 0 4px 20px rgba(26,127,212,0.2)";
+                    (e.currentTarget as HTMLElement).style.background = "var(--blue)";
                   }}
                 >
                   Show Me My Automation Plan

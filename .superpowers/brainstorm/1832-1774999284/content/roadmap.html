@@ -1,0 +1,59 @@
+<h2>Plan de Implementación — Todas las Mejoras</h2>
+<p class="subtitle">Ordenado por impacto visual inmediato. ¿Está bien este orden?</p>
+
+<div class="section">
+  <div style="display:flex;flex-direction:column;gap:12px">
+
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:16px;background:rgba(26,127,212,0.08);border:1px solid rgba(26,127,212,0.25);border-left:3px solid #1a7fd4">
+      <div style="font-size:1.4rem;font-weight:900;color:#1a7fd4;min-width:32px">1</div>
+      <div>
+        <h3 style="margin-bottom:4px">Visual Polish Global — Colores, Borders, Glow</h3>
+        <p style="font-size:0.82rem;color:#8eaec8;line-height:1.6">Actualizar CSS variables con paleta más premium. Agregar glow effects en elementos CTA. Borders más visibles. Gradientes más dramáticos. <strong style="color:#e8f4fd">Afecta todo el sitio de una sola vez.</strong></p>
+        <p style="font-size:0.72rem;color:#4a6a82;margin-top:6px">⏱ ~1 hora · globals.css + ajustes por componente</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:16px;background:rgba(200,148,26,0.06);border:1px solid rgba(200,148,26,0.2);border-left:3px solid #c8941a">
+      <div style="font-size:1.4rem;font-weight:900;color:#c8941a;min-width:32px">2</div>
+      <div>
+        <h3 style="margin-bottom:4px">Hero Section — Rediseño Completo</h3>
+        <p style="font-size:0.82rem;color:#8eaec8;line-height:1.6">Primera impresión del sitio. Headline más grande y bold. Subheadline más directa. CTAs más visibles con glow. Fondo con efecto de partículas/grid animado más dramático. Badge de credibilidad.</p>
+        <p style="font-size:0.72rem;color:#4a6a82;margin-top:6px">⏱ ~2 horas · Hero.tsx + componente de fondo</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:16px;background:rgba(0,229,122,0.05);border:1px solid rgba(0,229,122,0.15);border-left:3px solid #00e57a">
+      <div style="font-size:1.4rem;font-weight:900;color:#00e57a;min-width:32px">3</div>
+      <div>
+        <h3 style="margin-bottom:4px">Animaciones & Microinteracciones</h3>
+        <p style="font-size:0.82rem;color:#8eaec8;line-height:1.6">Hover effects en pricing cards, botones y nav. Scroll reveals con física más natural (spring en vez de ease). Contador animado de números en métricas. Stagger animations en listas de features.</p>
+        <p style="font-size:0.72rem;color:#4a6a82;margin-top:6px">⏱ ~2 horas · SectionReveal.tsx + todos los componentes con hover</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-left:3px solid #4a6a82">
+      <div style="font-size:1.4rem;font-weight:900;color:#8eaec8;min-width:32px">4</div>
+      <div>
+        <h3 style="margin-bottom:4px">Componentes Premium con 21st.dev</h3>
+        <p style="font-size:0.82rem;color:#8eaec8;line-height:1.6">Nav con blur glassmorphism. Pricing cards con toggle mensual/anual. CTA section más impactante. Testimonios con grid mejorado. Botones con efectos de ripple.</p>
+        <p style="font-size:0.72rem;color:#4a6a82;margin-top:6px">⏱ ~3 horas · Nav.tsx, Pricing.tsx, CTA.tsx, Testimonials.tsx</p>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:16px;align-items:flex-start;padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-left:3px solid #4a6a82">
+      <div style="font-size:1.4rem;font-weight:900;color:#8eaec8;min-width:32px">5</div>
+      <div>
+        <h3 style="margin-bottom:4px">Mobile Optimization</h3>
+        <p style="font-size:0.82rem;color:#8eaec8;line-height:1.6">Nav mobile con drawer animado. Pricing en stack vertical con comparativa. Formularios con mejor UX en touch. Tipografía y spacing revisados en breakpoints.</p>
+        <p style="font-size:0.72rem;color:#4a6a82;margin-top:6px">⏱ ~2 horas · Nav.tsx + todos los breakpoints</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div style="margin-top:24px;padding:14px;background:rgba(26,127,212,0.06);border:1px solid rgba(26,127,212,0.15)">
+  <p style="font-size:0.8rem;color:#8eaec8;line-height:1.6">
+    <strong style="color:#e8f4fd">Total estimado: ~10 horas de implementación.</strong> Cada paso hace commit y push. Si algo no te gusta en el camino, paramos y ajustamos.
+  </p>
+</div>

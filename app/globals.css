@@ -5,19 +5,22 @@
   --bg: #020508;
   --surface: #080d14;
   --surface2: #0d1520;
-  --border: rgba(255,255,255,0.06);
-  --border2: rgba(255,255,255,0.10);
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.13);
   --blue: #1a7fd4;
-  --blue-dim: rgba(26,127,212,0.12);
-  --blue-glow: rgba(26,127,212,0.25);
+  --blue-bright: #3da1f5;
+  --blue-dim: rgba(26,127,212,0.14);
+  --blue-glow: rgba(26,127,212,0.35);
+  --blue-glow-strong: rgba(26,127,212,0.55);
   --gold: #c8941a;
-  --gold-dim: rgba(200,148,26,0.12);
-  --gold-glow: rgba(200,148,26,0.25);
+  --gold-bright: #e8ad2a;
+  --gold-dim: rgba(200,148,26,0.14);
+  --gold-glow: rgba(200,148,26,0.35);
   --green: #00e57a;
   --green-dim: rgba(0,229,122,0.10);
-  --text: #e8f4fd;
-  --text-muted: #8eaec8;
-  --text-dim: #4a6a82;
+  --text: #eef5fd;
+  --text-muted: #92b4cc;
+  --text-dim: #4e6e88;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -111,7 +114,26 @@ h1, h2, h3, h4, h5, h6 {
 /* Gradient divider */
 .gdiv {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border2) 30%, var(--border2) 70%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(26,127,212,0.25) 30%, rgba(200,148,26,0.2) 70%, transparent);
+}
+
+/* Glow button utility */
+.btn-glow {
+  box-shadow: 0 0 20px rgba(26,127,212,0.2), 0 4px 20px rgba(26,127,212,0.15);
+  transition: box-shadow 0.3s, transform 0.2s !important;
+}
+.btn-glow:hover {
+  box-shadow: 0 0 35px rgba(26,127,212,0.45), 0 8px 30px rgba(26,127,212,0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Glow card */
+.card-glow {
+  transition: border-color 0.3s, box-shadow 0.3s !important;
+}
+.card-glow:hover {
+  border-color: rgba(26,127,212,0.35) !important;
+  box-shadow: 0 8px 40px rgba(26,127,212,0.12) !important;
 }
 
 /* Animations */
@@ -138,4 +160,12 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes dot-pulse {
   0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,229,122,0.4); }
   50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(0,229,122,0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes border-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(26,127,212,0.2); }
+  50% { box-shadow: 0 0 20px rgba(26,127,212,0.45), 0 0 8px rgba(200,148,26,0.2); }
 }

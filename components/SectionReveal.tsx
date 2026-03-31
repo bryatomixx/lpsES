@@ -23,9 +23,13 @@ export default function SectionReveal({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ opacity: 0, y, filter: "blur(4px)" }}
+      animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y, filter: "blur(4px)" }}
+      transition={{
+        opacity: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
+        y: { type: "spring", stiffness: 70, damping: 16, delay },
+        filter: { duration: 0.5, delay },
+      }}
       className={className}
       style={style}
     >

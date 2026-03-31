@@ -242,7 +242,7 @@ export default function Pricing() {
                 style={{
                   background: plan.featured ? "var(--surface)" : "var(--surface2)",
                   border: plan.featured
-                    ? "1px solid rgba(26,127,212,0.3)"
+                    ? "1px solid rgba(26,127,212,0.4)"
                     : "1px solid var(--border)",
                   padding: "36px 28px",
                   position: "relative",
@@ -250,6 +250,24 @@ export default function Pricing() {
                   display: "flex",
                   flexDirection: "column",
                   height: "100%",
+                  transition: "border-color 0.3s, box-shadow 0.3s",
+                  boxShadow: plan.featured
+                    ? "0 0 40px rgba(26,127,212,0.12), inset 0 0 60px rgba(26,127,212,0.03)"
+                    : "none",
+                }}
+                onMouseEnter={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.6)" : "rgba(26,127,212,0.25)";
+                  el.style.boxShadow = plan.featured
+                    ? "0 0 60px rgba(26,127,212,0.2), inset 0 0 60px rgba(26,127,212,0.04)"
+                    : "0 8px 40px rgba(26,127,212,0.08)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.4)" : "var(--border)";
+                  el.style.boxShadow = plan.featured
+                    ? "0 0 40px rgba(26,127,212,0.12), inset 0 0 60px rgba(26,127,212,0.03)"
+                    : "none";
                 }}
               >
                 {/* Top gradient bar (featured) */}

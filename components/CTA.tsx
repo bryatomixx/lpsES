@@ -25,7 +25,19 @@ export default function CTA() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26,127,212,0.07) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(26,127,212,0.12) 0%, transparent 70%)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          bottom: "-10%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "60%",
+          height: 1,
+          background: "linear-gradient(90deg, transparent, rgba(26,127,212,0.4), rgba(200,148,26,0.3), transparent)",
           pointerEvents: "none",
         }}
       />
@@ -98,7 +110,7 @@ export default function CTA() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
-                padding: "18px 40px",
+                padding: "18px 44px",
                 background: "var(--blue)",
                 color: "white",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
@@ -107,17 +119,19 @@ export default function CTA() {
                 letterSpacing: "0.01em",
                 textDecoration: "none",
                 transition: "all 0.25s",
+                boxShadow: "0 0 30px rgba(26,127,212,0.3), 0 6px 25px rgba(26,127,212,0.2)",
+                animation: "border-glow 3s ease-in-out infinite",
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = "#2290e8";
+                (e.currentTarget as HTMLElement).style.background = "var(--blue-bright)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)";
                 (e.currentTarget as HTMLElement).style.boxShadow =
-                  "0 16px 50px rgba(26,127,212,0.45)";
+                  "0 0 60px rgba(26,127,212,0.6), 0 16px 50px rgba(26,127,212,0.4)";
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.background = "var(--blue)";
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(26,127,212,0.3), 0 6px 25px rgba(26,127,212,0.2)";
               }}
             >
               Book Your Free Strategy Call
