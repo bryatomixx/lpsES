@@ -521,28 +521,6 @@ export default function WhoWeServe() {
                         Next →
                       </button>
                     )}
-                    <a
-                      href={`https://latinprimesystems.com/industries/${activeIndustry.slug}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        marginLeft: "auto",
-                        padding: "9px 18px",
-                        background: "var(--blue)",
-                        color: "white",
-                        fontFamily: "'Plus Jakarta Sans', sans-serif",
-                        fontWeight: 700,
-                        fontSize: "0.78rem",
-                        textDecoration: "none",
-                        letterSpacing: "0.02em",
-                        transition: "background 0.2s",
-                        whiteSpace: "nowrap",
-                      }}
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = "#2290e8")}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = "var(--blue)")}
-                    >
-                      Get Started →
-                    </a>
                   </div>
                 </div>
               </motion.div>

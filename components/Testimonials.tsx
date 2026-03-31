@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: "Jesús Martínez",
     role: "Insurance Agency Owner",
-    photo: "https://storage.googleapis.com/msgsndr/0EgKTcd9YvsDKkQqklPo/media/6836a7e99027ad35ab29c7d7.png",
+    photo: "https://assets.cdn.filesafe.space/0EgKTcd9YvsDKkQqklPo/media/693c4c63078883d9c5ac7d06.jpeg",
     quote:
       "Since we set up the AI voice agent, we haven't missed a single lead. It answers every call, qualifies the client, and books the appointment — even at 11pm. Our close rate went up 40% in the first two months.",
     result: "+40% close rate",
@@ -16,7 +16,7 @@ const testimonials = [
   {
     name: "Joshua Plaza",
     role: "Barbershop Owner",
-    photo: "https://storage.googleapis.com/msgsndr/0EgKTcd9YvsDKkQqklPo/media/6836a7e9b46d2a8c7e56fd62.png",
+    photo: "https://assets.cdn.filesafe.space/0EgKTcd9YvsDKkQqklPo/media/693ca110cfdc2f1c3a6253b3.jpeg",
     quote:
       "I used to spend 2 hours a day just confirming appointments and chasing no-shows. Now the system handles it all automatically. My chair is full every day and I didn't hire anyone.",
     result: "2 hrs/day saved",
@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: "Berta Viloria",
     role: "Accountant & Tax Advisor",
-    photo: "https://storage.googleapis.com/msgsndr/0EgKTcd9YvsDKkQqklPo/media/6836a7e99027ad60f229c7d8.png",
+    photo: "https://assets.cdn.filesafe.space/0EgKTcd9YvsDKkQqklPo/media/693c4c9fe91800719e64f8d4.jpeg",
     quote:
       "Tax season used to be chaos. Now document collection, client reminders, and follow-ups all happen automatically. I handled 30% more clients this year with the same staff. That's pure profit.",
     result: "+30% clients served",
@@ -32,7 +32,7 @@ const testimonials = [
   {
     name: "Pedro Rivera",
     role: "CabinetWorkx — Contractor",
-    photo: "https://storage.googleapis.com/msgsndr/0EgKTcd9YvsDKkQqklPo/media/6836a7e9b46d2a1ef556fd63.png",
+    photo: "https://assets.cdn.filesafe.space/0EgKTcd9YvsDKkQqklPo/media/693c4cbe8bbf4a4527df2ec0.jpeg",
     quote:
       "I'm always on job sites and can't answer my phone. With the missed-call text-back, every missed call gets a response in seconds. I've recovered deals I would have completely lost before.",
     result: "Never miss a lead",
@@ -40,7 +40,7 @@ const testimonials = [
   {
     name: "Kerwin Iglesias",
     role: "Insurance Agency Owner",
-    photo: "https://storage.googleapis.com/msgsndr/0EgKTcd9YvsDKkQqklPo/media/6836a7e99027ad05e529c7d9.png",
+    photo: "https://assets.cdn.filesafe.space/0EgKTcd9YvsDKkQqklPo/media/693c4d003165d977033d76e4.jpeg",
     quote:
       "I was skeptical at first. But within 30 days, the system had already recovered $4,200 in policies from dormant leads we thought were dead. The ROI was obvious in the first month.",
     result: "$4,200 recovered",

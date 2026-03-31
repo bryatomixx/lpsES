@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const WEBHOOK_URL =
-  "https://services.leadconnectorhq.com/hooks/0EgKTcd9YvsDKkQqklPo/webhook-trigger/7ec1d9dc-e8fa-4054-bff5-f8fcbba7719b";
+  "https://latinprimesystems.app.n8n.cloud/webhook/05355d0d-cce9-4f2a-94a4-174498a2b75e";
 
 type Status = "idle" | "sending" | "success";
 
