@@ -68,9 +68,21 @@ export default function Hero() {
             position: "absolute",
             inset: 0,
             backgroundImage:
-              "linear-gradient(rgba(26,127,212,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(26,127,212,0.04) 1px, transparent 1px)",
+              "linear-gradient(rgba(26,127,212,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(26,127,212,0.07) 1px, transparent 1px)",
             backgroundSize: "80px 80px",
             pointerEvents: "none",
+          }}
+        />
+        {/* Dot grid overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "radial-gradient(circle, rgba(26,127,212,0.35) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+            pointerEvents: "none",
+            maskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%)",
+            WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%)",
           }}
         />
 
@@ -119,10 +131,11 @@ export default function Hero() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 10,
-                background: "rgba(26,127,212,0.08)",
-                border: "1px solid rgba(26,127,212,0.2)",
-                padding: "6px 14px",
+                background: "rgba(26,127,212,0.12)",
+                border: "1px solid rgba(26,127,212,0.4)",
+                padding: "7px 16px",
                 marginBottom: 28,
+                boxShadow: "0 0 20px rgba(26,127,212,0.2)",
               }}
             >
               <span
@@ -402,11 +415,11 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 1.0 }}
               style={{
                 position: "absolute",
-                width: "65%",
-                height: "65%",
+                width: "75%",
+                height: "75%",
                 borderRadius: "50%",
-                background: "radial-gradient(circle, rgba(26,127,212,0.15) 0%, transparent 70%)",
-                filter: "blur(30px)",
+                background: "radial-gradient(circle, rgba(26,127,212,0.28) 0%, rgba(26,127,212,0.08) 50%, transparent 70%)",
+                filter: "blur(25px)",
               }}
             />
             <div
@@ -425,7 +438,7 @@ export default function Hero() {
                   maxWidth: 520,
                   height: "auto",
                   objectFit: "contain",
-                  filter: "drop-shadow(0 20px 60px rgba(26,127,212,0.35))",
+                  filter: "drop-shadow(0 20px 80px rgba(26,127,212,0.55)) drop-shadow(0 0 40px rgba(26,127,212,0.3))",
                 }}
                 priority
               />

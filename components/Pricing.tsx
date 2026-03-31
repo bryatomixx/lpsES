@@ -240,9 +240,11 @@ export default function Pricing() {
             <SectionReveal key={i} delay={i * 0.1}>
               <div
                 style={{
-                  background: plan.featured ? "var(--surface)" : "var(--surface2)",
+                  background: plan.featured
+                    ? "linear-gradient(160deg, #0a1628 0%, #080d14 60%)"
+                    : "var(--surface2)",
                   border: plan.featured
-                    ? "1px solid rgba(26,127,212,0.4)"
+                    ? "1px solid rgba(26,127,212,0.55)"
                     : "1px solid var(--border)",
                   padding: "36px 28px",
                   position: "relative",
@@ -250,36 +252,51 @@ export default function Pricing() {
                   display: "flex",
                   flexDirection: "column",
                   height: "100%",
-                  transition: "border-color 0.3s, box-shadow 0.3s",
+                  transition: "border-color 0.3s, box-shadow 0.3s, transform 0.3s",
                   boxShadow: plan.featured
-                    ? "0 0 40px rgba(26,127,212,0.12), inset 0 0 60px rgba(26,127,212,0.03)"
+                    ? "0 0 80px rgba(26,127,212,0.22), 0 20px 60px rgba(26,127,212,0.1), inset 0 0 80px rgba(26,127,212,0.04)"
                     : "none",
+                  transform: plan.featured ? "scale(1.02)" : "scale(1)",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.6)" : "rgba(26,127,212,0.25)";
+                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.8)" : "rgba(26,127,212,0.3)";
                   el.style.boxShadow = plan.featured
-                    ? "0 0 60px rgba(26,127,212,0.2), inset 0 0 60px rgba(26,127,212,0.04)"
-                    : "0 8px 40px rgba(26,127,212,0.08)";
+                    ? "0 0 100px rgba(26,127,212,0.35), 0 20px 60px rgba(26,127,212,0.18)"
+                    : "0 8px 40px rgba(26,127,212,0.1)";
+                  el.style.transform = plan.featured ? "scale(1.03)" : "scale(1.01)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.4)" : "var(--border)";
+                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.55)" : "var(--border)";
                   el.style.boxShadow = plan.featured
-                    ? "0 0 40px rgba(26,127,212,0.12), inset 0 0 60px rgba(26,127,212,0.03)"
+                    ? "0 0 80px rgba(26,127,212,0.22), 0 20px 60px rgba(26,127,212,0.1), inset 0 0 80px rgba(26,127,212,0.04)"
                     : "none";
+                  el.style.transform = plan.featured ? "scale(1.02)" : "scale(1)";
                 }}
               >
-                {/* Top gradient bar (featured) */}
-                {plan.featured && (
+                {/* Top gradient bar */}
+                {plan.featured ? (
                   <div
                     style={{
                       position: "absolute",
                       top: 0,
                       left: 0,
                       right: 0,
-                      height: 3,
-                      background: "linear-gradient(90deg, var(--blue), var(--gold))",
+                      height: 4,
+                      background: "linear-gradient(90deg, var(--blue), var(--blue-bright), var(--gold-bright))",
+                      boxShadow: "0 0 20px rgba(26,127,212,0.8)",
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 2,
+                      background: "linear-gradient(90deg, transparent, var(--border2), transparent)",
                     }}
                   />
                 )}
@@ -288,15 +305,18 @@ export default function Pricing() {
                   <div
                     style={{
                       display: "inline-block",
-                      background: "var(--gold)",
-                      color: "var(--bg)",
+                      background: plan.featured
+                        ? "linear-gradient(135deg, var(--blue), var(--blue-bright))"
+                        : "var(--gold)",
+                      color: "white",
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "0.58rem",
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
-                      padding: "4px 10px",
-                      fontWeight: 500,
+                      padding: "5px 12px",
+                      fontWeight: 600,
                       marginBottom: 16,
+                      boxShadow: plan.featured ? "0 0 16px rgba(26,127,212,0.5)" : "none",
                     }}
                   >
                     {plan.badge}
