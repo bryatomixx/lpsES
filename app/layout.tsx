@@ -128,9 +128,23 @@ const jsonLd = [
         },
         {
           "@type": "Offer",
+          name: "Pro Plan",
+          description:
+            "Everything in Starter with unlimited pipelines and flows, unlimited custom automations, advanced AI chat connected to CRM, sales pipeline with automatic nurturing, calendar integration with no-show prevention, dormant client reactivation, Facebook Lead Ads to CRM, automated Instagram DMs, WhatsApp Business API, complete sales funnel, reputation management, Stripe payment integration, and priority support.",
+          price: "997",
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "997",
+            priceCurrency: "USD",
+            unitText: "MONTH",
+          },
+        },
+        {
+          "@type": "Offer",
           name: "Growth Plan",
           description:
-            "Everything in Starter plus AI voice agent (24/7 inbound call answering, lead qualification, appointment booking), unlimited automations, advanced AI chat, Facebook/Instagram/WhatsApp integrations, AI-generated sales emails, Stripe payments, priority support, and monthly strategy call.",
+            "Everything in Pro plus AI voice agent (24/7 inbound call answering, lead qualification, appointment booking, automatic outbound calls to new leads), AI-generated sales emails, personalized follow-up copy, automatic reporting dashboard, priority support with 4-hour response, and monthly strategy call.",
           price: "1497",
           priceCurrency: "USD",
           priceSpecification: {
@@ -218,7 +232,7 @@ const jsonLd = [
         name: "How much does AI automation cost for a small business?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Latin Prime Systems offers three plans: Starter at $497/month (CRM, AI chat widget, follow-up automation, booking system, website), Growth at $1,497/month (everything in Starter plus AI voice agent, unlimited automations, multichannel integrations, WhatsApp, Instagram, Facebook, Stripe), and Enterprise with custom pricing for agencies and multi-location businesses. All plans include setup, configuration, and ongoing support.",
+          text: "Latin Prime Systems offers four plans: Starter at $497/month (CRM, AI chat widget, follow-up automation, booking system, website), Pro at $997/month (everything in Starter plus unlimited automations, multichannel — WhatsApp, Instagram, Facebook, Stripe, reputation management), Growth at $1,497/month (everything in Pro plus AI voice agent that answers calls 24/7), and Enterprise with custom pricing for agencies and multi-location businesses. All plans include a one-time setup fee and ongoing support with no long-term contracts.",
         },
       },
       {
@@ -292,6 +306,55 @@ const jsonLd = [
       name,
     })),
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://latinprimesystems.com/#organization",
+    name: "Latin Prime Systems",
+    url: "https://latinprimesystems.com",
+    logo: "https://assets.cdn.filesafe.space/0EgKTcd9YvsDKkQqklPo/media/69ac6d227bdf387250ce554b.png",
+    sameAs: [],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+19714006390",
+        contactType: "customer service",
+        availableLanguage: ["English", "Spanish"],
+        contactOption: "TollFree",
+      },
+    ],
+    knowsAbout: [
+      "AI Automation",
+      "Artificial Intelligence for Business",
+      "CRM Systems",
+      "GoHighLevel",
+      "AI Voice Agents",
+      "VAPI AI",
+      "Workflow Automation",
+      "Lead Generation Automation",
+      "Sales Pipeline Automation",
+      "WhatsApp Business API",
+      "Small Business Technology",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://latinprimesystems.com/#webpage",
+    url: "https://latinprimesystems.com",
+    name: "Latin Prime Systems — AI Automation Agency for Small Business",
+    description: "Done-for-you AI automation: voice agents, CRM, follow-up systems, and workflow automation. Stop losing leads. Scale without hiring. 90-Day ROI Guarantee.",
+    inLanguage: ["en", "es"],
+    isPartOf: { "@id": "https://latinprimesystems.com/#website" },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["#hero", "#solutions", "#pricing", "#contact"],
+      xpath: [
+        "/html/head/title",
+        "/html/head/meta[@name='description']/@content",
+      ],
+    },
+  },
 ];
 
 export default function RootLayout({
@@ -305,12 +368,23 @@ export default function RootLayout({
         <meta name="theme-color" content="#020508" />
         <meta name="color-scheme" content="dark" />
         <meta name="format-detection" content="telephone=no" />
+        <meta name="application-name" content="Latin Prime Systems" />
+        <meta name="apple-mobile-web-app-title" content="Latin Prime Systems" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         {/* Geo targeting */}
         <meta name="geo.region" content="US" />
         <meta name="geo.placename" content="United States" />
         <meta name="ICBM" content="37.09024, -95.712891" />
-        {/* GEO: Help AI assistants understand the entity */}
-        <meta name="description" content="Latin Prime Systems — done-for-you AI automation agency. We deploy AI voice agents, CRM systems, and workflow automation for small businesses. $497–$1,497/month. 90-Day ROI Guarantee. Serving US and Latin America." />
+        {/* GEO/AI: entity clarification for AI search engines */}
+        <meta name="description" content="Latin Prime Systems — done-for-you AI automation agency. AI voice agents, CRM systems, and workflow automation for small businesses. Plans from $497–$1,497/month. 90-Day ROI Guarantee. Serving US and Latin America." />
+        <meta name="subject" content="AI Automation Agency for Small Business" />
+        <meta name="rating" content="general" />
+        <meta name="revisit-after" content="7 days" />
+        {/* hreflang — bilingual site */}
+        <link rel="alternate" hrefLang="en" href="https://latinprimesystems.com" />
+        <link rel="alternate" hrefLang="es" href="https://latinprimesystems.com" />
+        <link rel="alternate" hrefLang="x-default" href="https://latinprimesystems.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {jsonLd.map((schema, i) => (

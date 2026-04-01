@@ -19,15 +19,19 @@ Insurance agencies, real estate agents and brokers, dental and healthcare practi
 
 ## Pricing
 
-- **Starter**: $497/month — CRM, AI chat widget, online booking, automated follow-up, professional website
-- **Growth**: $1,497/month — Everything in Starter plus AI voice agent, unlimited automations, multichannel (Facebook, Instagram, WhatsApp), Stripe payments, priority support
-- **Enterprise**: Custom pricing — fully custom infrastructure, white-label, multi-location, dedicated account manager
+| Plan | Monthly | Setup Fee | Key Addition |
+|------|---------|-----------|--------------|
+| Starter | $497/mo | $997 | CRM, AI chat, booking, website, follow-up |
+| Pro | $997/mo | $1,497 | + Unlimited automations, multichannel (FB, IG, WhatsApp), Stripe, reputation |
+| Growth | $1,497/mo | $1,997 | + AI voice agent 24/7, outbound calls to new leads |
+| Enterprise | Custom | Custom | Fully custom, white-label, multi-location |
 
 All plans are month-to-month. No long-term contracts.
 
 ## Guarantees
 
 - Starter: System live in 30 days or we refund the month
+- Pro: Measurable improvement in lead response or time saved in 45 days, or we work free
 - Growth: Measurable increase in leads or time saved in 60 days, or we work free until you see it
 - Enterprise: Documented ROI in 90 days or we keep working at no extra cost
 
