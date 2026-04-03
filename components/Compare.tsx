@@ -27,7 +27,7 @@ export default function Compare() {
       id="compare"
       ref={ref}
       className="section-wrap"
-      style={{ background: "var(--bg)" }}
+      style={{ background: "var(--surface)" }}
     >
       <div className="section-inner">
         <motion.div
@@ -41,17 +41,7 @@ export default function Compare() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", marginBottom: 60 }}
           >
             Before Latin Prime.{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              After Latin Prime.
-            </em>
+            <em style={{ fontStyle: "italic", color: "#B4945D" }}>After Latin Prime.</em>
           </h2>
         </motion.div>
 
@@ -59,7 +49,7 @@ export default function Compare() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: 2,
+            gap: 24,
           }}
           className="compare-grid"
         >
@@ -69,8 +59,10 @@ export default function Compare() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
             style={{
-              background: "var(--surface)",
+              background: "#FFFFFF",
               border: "1px solid var(--border)",
+              borderRadius: 12,
+              boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
               padding: "36px 32px",
             }}
           >
@@ -80,7 +72,7 @@ export default function Compare() {
                 fontSize: "0.62rem",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "#e55",
+                color: "#c0392b",
                 marginBottom: 28,
                 display: "flex",
                 alignItems: "center",
@@ -92,8 +84,7 @@ export default function Compare() {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  background: "#e55",
-                  opacity: 0.7,
+                  background: "rgba(192,57,43,0.5)",
                 }}
               />
               Without Us
@@ -146,31 +137,23 @@ export default function Compare() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.15 }}
             style={{
-              background: "rgba(26,127,212,0.04)",
-              border: "1px solid rgba(26,127,212,0.15)",
+              background: "#FFFFFF",
+              border: "1px solid rgba(180,148,93,0.2)",
+              borderTop: "2px solid #B4945D",
+              borderRadius: 12,
+              boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
               padding: "36px 32px",
               position: "relative",
               overflow: "hidden",
             }}
           >
-            {/* Top accent */}
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: 2,
-                background: "linear-gradient(90deg, var(--blue), var(--gold))",
-              }}
-            />
             <div
               style={{
                 fontFamily: "'DM Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.18em",
                 textTransform: "uppercase",
-                color: "var(--green)",
+                color: "#B4945D",
                 marginBottom: 28,
                 display: "flex",
                 alignItems: "center",
@@ -182,7 +165,7 @@ export default function Compare() {
                   width: 8,
                   height: 8,
                   borderRadius: "50%",
-                  background: "var(--green)",
+                  background: "#B4945D",
                   animation: "dot-pulse 2s ease-in-out infinite",
                 }}
               />
@@ -200,7 +183,7 @@ export default function Compare() {
                   paddingBottom: 18,
                   marginBottom: 18,
                   borderBottom:
-                    i < afterItems.length - 1 ? "1px solid rgba(26,127,212,0.1)" : "none",
+                    i < afterItems.length - 1 ? "1px solid rgba(180,148,93,0.1)" : "none",
                 }}
               >
                 <div
@@ -208,7 +191,7 @@ export default function Compare() {
                     width: 6,
                     height: 6,
                     borderRadius: "50%",
-                    background: "var(--green)",
+                    background: "#B4945D",
                     opacity: 0.7,
                     flexShrink: 0,
                     marginTop: 7,
