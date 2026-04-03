@@ -22,7 +22,7 @@ const solutions = [
     title: "Your Sales System, on Autopilot",
     body: "A complete system that captures leads, nurtures them with the right message at the right time, follows up relentlessly, and books appointments — without you lifting a finger.",
     footer: "CRM + automation + AI, fully integrated",
-    color: "var(--green)",
+    color: "var(--gold)",
   },
   {
     outcome: "Know your business in real time",
@@ -45,7 +45,7 @@ export default function Solutions() {
     <section
       id="solutions"
       className="section-wrap"
-      style={{ background: "var(--surface)" }}
+      style={{ background: "var(--bg)" }}
     >
       <div className="section-inner">
         <SectionReveal>
@@ -55,15 +55,7 @@ export default function Solutions() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
           >
             Not Tools.{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <em style={{ fontStyle: "italic", color: "#B4945D" }}>
               Results.
             </em>
           </h2>
@@ -77,7 +69,7 @@ export default function Solutions() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 2,
+            gap: 24,
           }}
         >
           {solutions.map((sol, i) => (
@@ -85,23 +77,27 @@ export default function Solutions() {
               <SpotlightCard
                 spotlightColor={`${sol.color}22`}
                 style={{
-                  background: "var(--surface2)",
+                  background: "var(--surface)",
                   border: "1px solid var(--border)",
+                  borderRadius: 12,
                   padding: "32px 28px",
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  transition: "border-color 0.3s, transform 0.3s",
+                  transition: "border-color 0.3s, transform 0.3s, box-shadow 0.3s",
+                  boxShadow: "0 1px 4px rgba(15,34,64,0.04)",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = `${sol.color}44`;
+                  el.style.borderColor = "rgba(180,148,93,0.35)";
                   el.style.transform = "translateY(-4px)";
+                  el.style.boxShadow = "0 8px 32px rgba(15,34,64,0.1)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.borderColor = "var(--border)";
                   el.style.transform = "translateY(0)";
+                  el.style.boxShadow = "0 1px 4px rgba(15,34,64,0.04)";
                 }}
               >
                 {/* Outcome badge */}
