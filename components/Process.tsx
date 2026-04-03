@@ -34,7 +34,7 @@ export default function Process() {
       id="process"
       ref={ref}
       className="section-wrap"
-      style={{ background: "var(--surface)" }}
+      style={{ background: "var(--bg)" }}
     >
       <div className="section-inner">
         <motion.div
@@ -48,17 +48,7 @@ export default function Process() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
           >
             We Handle Everything.{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              You See Results.
-            </em>
+            <em style={{ fontStyle: "italic", color: "#B4945D" }}>You See Results.</em>
           </h2>
           <p className="section-desc">
             You don&apos;t need to understand the technology. That&apos;s our job.
@@ -69,7 +59,7 @@ export default function Process() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: 2,
+            gap: 20,
             position: "relative",
           }}
         >
@@ -80,11 +70,13 @@ export default function Process() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.65, delay: i * 0.12 }}
               style={{
-                background: "var(--surface2)",
+                background: "var(--surface)",
                 border: "1px solid var(--border)",
+                borderRadius: 12,
                 padding: "36px 28px",
                 position: "relative",
                 overflow: "hidden",
+                boxShadow: "0 1px 4px rgba(15,34,64,0.03)",
               }}
             >
               {/* Step number — background watermark */}
@@ -96,7 +88,7 @@ export default function Process() {
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontWeight: 900,
                   fontSize: "7rem",
-                  color: "rgba(255,255,255,0.025)",
+                  color: "rgba(15,34,64,0.04)",
                   lineHeight: 1,
                   letterSpacing: "-0.04em",
                   userSelect: "none",
@@ -111,7 +103,7 @@ export default function Process() {
                 style={{
                   width: 32,
                   height: 3,
-                  background: i % 2 === 0 ? "var(--blue)" : "var(--gold)",
+                  background: "#B4945D",
                   marginBottom: 20,
                 }}
               />
@@ -121,7 +113,7 @@ export default function Process() {
                   fontFamily: "'DM Mono', monospace",
                   fontSize: "0.6rem",
                   letterSpacing: "0.18em",
-                  color: i % 2 === 0 ? "var(--blue)" : "var(--gold)",
+                  color: "var(--gold)",
                   marginBottom: 12,
                   textTransform: "uppercase",
                 }}
