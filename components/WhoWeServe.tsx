@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import SectionReveal from "./SectionReveal";
 
 const industries = [
@@ -165,7 +166,7 @@ export default function WhoWeServe() {
       <section
         id="who"
         className="section-wrap"
-        style={{ background: "var(--bg)" }}
+        style={{ background: "var(--surface)" }}
       >
         <div className="section-inner">
           <SectionReveal>
@@ -175,15 +176,7 @@ export default function WhoWeServe() {
               style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", maxWidth: 600 }}
             >
               Any Business That Wants to{" "}
-              <em
-                style={{
-                  fontStyle: "italic",
-                  background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <em style={{ fontStyle: "italic", color: "#B4945D" }}>
                 Operate Smarter
               </em>
             </h2>
@@ -197,34 +190,36 @@ export default function WhoWeServe() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-              gap: 2,
+              gap: 16,
             }}
           >
             {industries.map((ind, i) => (
               <SectionReveal key={i} delay={i * 0.05} style={{ height: "100%" }}>
                 <div
                   style={{
-                    background: "var(--surface)",
+                    background: "#FFFFFF",
                     border: "1px solid var(--border)",
+                    borderRadius: 12,
                     padding: "28px 22px",
                     cursor: "pointer",
-                    transition: "border-color 0.3s, transform 0.3s, background 0.3s",
+                    transition: "border-color 0.3s, transform 0.3s, box-shadow 0.3s",
                     position: "relative",
                     overflow: "hidden",
                     height: "100%",
                     boxSizing: "border-box",
+                    boxShadow: "0 1px 4px rgba(15,34,64,0.04)",
                   }}
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement;
-                    el.style.borderColor = "rgba(26,127,212,0.3)";
+                    el.style.borderColor = "rgba(180,148,93,0.4)";
                     el.style.transform = "translateY(-4px)";
-                    el.style.background = "var(--surface2)";
+                    el.style.boxShadow = "0 8px 32px rgba(15,34,64,0.1)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     el.style.borderColor = "var(--border)";
                     el.style.transform = "translateY(0)";
-                    el.style.background = "var(--surface)";
+                    el.style.boxShadow = "0 1px 4px rgba(15,34,64,0.04)";
                   }}
                   onClick={() => setActiveModal(i)}
                 >
@@ -251,19 +246,44 @@ export default function WhoWeServe() {
                   >
                     {ind.desc}
                   </p>
-                  <span
-                    style={{
-                      fontFamily: "'DM Mono', monospace",
-                      fontSize: "0.62rem",
-                      letterSpacing: "0.1em",
-                      color: "var(--blue)",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                    }}
-                  >
-                    See what we can do →
-                  </span>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+                    <span
+                      style={{
+                        fontFamily: "'DM Mono', monospace",
+                        fontSize: "0.62rem",
+                        letterSpacing: "0.1em",
+                        color: "var(--gold)",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 6,
+                      }}
+                    >
+                      See what we can do →
+                    </span>
+                    <Link
+                      href={`/${ind.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      style={{
+                        fontFamily: "'DM Mono', monospace",
+                        fontSize: "0.58rem",
+                        letterSpacing: "0.1em",
+                        color: "var(--text-muted)",
+                        textDecoration: "none",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 4,
+                        transition: "color 0.2s",
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.color = "var(--gold)";
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.color = "var(--text-muted)";
+                      }}
+                    >
+                      Dedicated page ↗
+                    </Link>
+                  </div>
                 </div>
               </SectionReveal>
             ))}
@@ -284,7 +304,7 @@ export default function WhoWeServe() {
               style={{
                 position: "fixed",
                 inset: 0,
-                background: "rgba(0,0,0,0.75)",
+                background: "rgba(15,34,64,0.65)",
                 zIndex: 200,
                 backdropFilter: "blur(8px)",
               }}
@@ -313,8 +333,9 @@ export default function WhoWeServe() {
                   pointerEvents: "all",
                   width: "min(90vw, 820px)",
                   maxHeight: "85vh",
-                  background: "var(--surface)",
+                  background: "#FFFFFF",
                   border: "1px solid var(--border2)",
+                  borderRadius: 12,
                   display: "grid",
                   gridTemplateColumns: "1fr 1.4fr",
                   overflow: "hidden",
@@ -326,7 +347,7 @@ export default function WhoWeServe() {
                   style={{
                     position: "relative",
                     minHeight: 300,
-                    background: "var(--surface2)",
+                    background: "var(--surface)",
                     overflow: "hidden",
                   }}
                 >
@@ -360,7 +381,7 @@ export default function WhoWeServe() {
                       left: 0,
                       right: 0,
                       height: 3,
-                      background: "linear-gradient(90deg, var(--blue), var(--gold))",
+                      background: "#B4945D",
                     }}
                   />
                   <div
@@ -402,8 +423,9 @@ export default function WhoWeServe() {
                       top: 16,
                       right: 16,
                       zIndex: 2,
-                      background: "var(--surface2)",
+                      background: "var(--surface)",
                       border: "1px solid var(--border2)",
+                      borderRadius: 6,
                       width: 32,
                       height: 32,
                       display: "flex",
@@ -449,7 +471,7 @@ export default function WhoWeServe() {
                             lineHeight: 1.6,
                           }}
                         >
-                          <span style={{ color: "var(--green)", flexShrink: 0, marginTop: 2 }}>✓</span>
+                          <span style={{ color: "var(--gold)", flexShrink: 0, marginTop: 2 }}>✓</span>
                           {item}
                         </motion.li>
                       ))}
@@ -459,7 +481,7 @@ export default function WhoWeServe() {
                         transition={{ delay: activeIndustry.items.length * 0.06 }}
                         style={{
                           fontSize: "0.8rem",
-                          color: "rgba(200,148,26,0.7)",
+                          color: "rgba(180,148,93,0.7)",
                           fontStyle: "italic",
                           paddingLeft: 22,
                         }}
@@ -478,15 +500,16 @@ export default function WhoWeServe() {
                       gap: 10,
                       alignItems: "center",
                       flexWrap: "wrap",
-                      background: "var(--surface)",
+                      background: "#FFFFFF",
                     }}
                   >
                     {activeModal > 0 && (
                       <button
                         onClick={() => setActiveModal(activeModal - 1)}
                         style={{
-                          background: "var(--surface2)",
+                          background: "var(--surface)",
                           border: "1px solid var(--border2)",
+                          borderRadius: 6,
                           padding: "8px 14px",
                           cursor: "pointer",
                           color: "var(--text-muted)",
@@ -505,8 +528,9 @@ export default function WhoWeServe() {
                       <button
                         onClick={() => setActiveModal(activeModal + 1)}
                         style={{
-                          background: "var(--surface2)",
+                          background: "var(--surface)",
                           border: "1px solid var(--border2)",
+                          borderRadius: 6,
                           padding: "8px 14px",
                           cursor: "pointer",
                           color: "var(--text-muted)",
