@@ -191,7 +191,7 @@ const plans: Plan[] = [
   },
 ];
 
-function FeatureItem({ feat }: { feat: string | { section: string } }) {
+function FeatureItem({ feat, featured }: { feat: string | { section: string }; featured: boolean }) {
   if (typeof feat === "object") {
     return (
       <li
@@ -199,7 +199,7 @@ function FeatureItem({ feat }: { feat: string | { section: string } }) {
           fontFamily: "'DM Mono', monospace",
           fontSize: "0.6rem",
           letterSpacing: "0.14em",
-          color: "var(--text-dim)",
+          color: featured ? "rgba(255,255,255,0.35)" : "var(--text-dim)",
           padding: "10px 0 4px",
           marginTop: 4,
           listStyle: "none",
@@ -215,12 +215,12 @@ function FeatureItem({ feat }: { feat: string | { section: string } }) {
         display: "flex",
         gap: 10,
         fontSize: "0.83rem",
-        color: "var(--text-muted)",
+        color: featured ? "rgba(255,255,255,0.65)" : "var(--text-muted)",
         lineHeight: 1.6,
         listStyle: "none",
       }}
     >
-      <span style={{ color: "var(--blue)", flexShrink: 0, marginTop: 2 }}>✓</span>
+      <span style={{ color: "#B4945D", flexShrink: 0, marginTop: 2 }}>✓</span>
       {feat}
     </li>
   );
@@ -234,7 +234,7 @@ export default function Pricing() {
     <section
       id="pricing"
       className="section-wrap"
-      style={{ background: "var(--bg)" }}
+      style={{ background: "var(--surface)" }}
     >
       <div className="section-inner">
         <SectionReveal>
@@ -244,17 +244,7 @@ export default function Pricing() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)" }}
           >
             Enterprise Infrastructure{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              at Every Budget
-            </em>
+            <em style={{ fontStyle: "italic", color: "#B4945D" }}>at Every Budget</em>
           </h2>
           <p className="section-desc">
             Choose the level that fits where your business is today — and upgrade
@@ -266,13 +256,13 @@ export default function Pricing() {
             <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--text-dim)" }}>
               Currency:
             </span>
-            <div style={{ display: "flex", border: "1px solid var(--border2)", overflow: "hidden" }}>
+            <div style={{ display: "flex", border: "1px solid var(--border2)", borderRadius: 6, overflow: "hidden" }}>
               {(["USD", "COP", "MXN"] as Currency[]).map((c) => (
                 <button
                   key={c}
                   onClick={() => setCurrency(c)}
                   style={{
-                    background: currency === c ? "var(--blue)" : "transparent",
+                    background: currency === c ? "#B4945D" : "transparent",
                     border: "none",
                     borderRight: c !== "MXN" ? "1px solid var(--border2)" : "none",
                     color: currency === c ? "white" : "var(--text-muted)",
@@ -301,20 +291,17 @@ export default function Pricing() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: 2,
+            gap: 20,
             alignItems: "stretch",
           }}
         >
           {plans.map((plan, i) => (
             <SectionReveal key={i} delay={i * 0.1}>
               <div
-                style={{
-                  background: plan.featured
-                    ? "linear-gradient(160deg, #0a1628 0%, #080d14 60%)"
-                    : "var(--surface2)",
-                  border: plan.featured
-                    ? "1px solid rgba(26,127,212,0.55)"
-                    : "1px solid var(--border)",
+                style={plan.featured ? {
+                  background: "#0F2240",
+                  border: "1px solid rgba(180,148,93,0.3)",
+                  borderRadius: 12,
                   padding: "36px 28px",
                   position: "relative",
                   overflow: "hidden",
@@ -322,26 +309,43 @@ export default function Pricing() {
                   flexDirection: "column",
                   height: "100%",
                   transition: "border-color 0.3s, box-shadow 0.3s, transform 0.3s",
-                  boxShadow: plan.featured
-                    ? "0 0 80px rgba(26,127,212,0.22), 0 20px 60px rgba(26,127,212,0.1), inset 0 0 80px rgba(26,127,212,0.04)"
-                    : "none",
-                  transform: plan.featured ? "scale(1.02)" : "scale(1)",
+                  boxShadow: "none",
+                } : {
+                  background: "#FFFFFF",
+                  border: "1px solid var(--border)",
+                  borderRadius: 12,
+                  padding: "36px 28px",
+                  position: "relative",
+                  overflow: "hidden",
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  transition: "border-color 0.3s, box-shadow 0.3s, transform 0.3s",
+                  boxShadow: "0 2px 8px rgba(15,34,64,0.04)",
                 }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.8)" : "rgba(26,127,212,0.3)";
-                  el.style.boxShadow = plan.featured
-                    ? "0 0 100px rgba(26,127,212,0.35), 0 20px 60px rgba(26,127,212,0.18)"
-                    : "0 8px 40px rgba(26,127,212,0.1)";
-                  el.style.transform = plan.featured ? "scale(1.03)" : "scale(1.01)";
+                  if (plan.featured) {
+                    el.style.borderColor = "rgba(180,148,93,0.6)";
+                    el.style.boxShadow = "0 8px 40px rgba(15,34,64,0.2)";
+                    el.style.transform = "translateY(-2px)";
+                  } else {
+                    el.style.borderColor = "rgba(180,148,93,0.35)";
+                    el.style.boxShadow = "0 8px 40px rgba(15,34,64,0.1)";
+                    el.style.transform = "translateY(-2px)";
+                  }
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
-                  el.style.borderColor = plan.featured ? "rgba(26,127,212,0.55)" : "var(--border)";
-                  el.style.boxShadow = plan.featured
-                    ? "0 0 80px rgba(26,127,212,0.22), 0 20px 60px rgba(26,127,212,0.1), inset 0 0 80px rgba(26,127,212,0.04)"
-                    : "none";
-                  el.style.transform = plan.featured ? "scale(1.02)" : "scale(1)";
+                  if (plan.featured) {
+                    el.style.borderColor = "rgba(180,148,93,0.3)";
+                    el.style.boxShadow = "none";
+                    el.style.transform = "translateY(0)";
+                  } else {
+                    el.style.borderColor = "var(--border)";
+                    el.style.boxShadow = "0 2px 8px rgba(15,34,64,0.04)";
+                    el.style.transform = "translateY(0)";
+                  }
                 }}
               >
                 {/* Top gradient bar */}
@@ -353,8 +357,8 @@ export default function Pricing() {
                       left: 0,
                       right: 0,
                       height: 4,
-                      background: "linear-gradient(90deg, var(--blue), var(--blue-bright), var(--gold-bright))",
-                      boxShadow: "0 0 20px rgba(26,127,212,0.8)",
+                      background: "linear-gradient(90deg, #B4945D, #C5A059)",
+                      boxShadow: "none",
                     }}
                   />
                 ) : (
@@ -375,8 +379,8 @@ export default function Pricing() {
                     style={{
                       display: "inline-block",
                       background: plan.featured
-                        ? "linear-gradient(135deg, var(--blue), var(--blue-bright))"
-                        : "var(--gold)",
+                        ? "linear-gradient(135deg, #B4945D, #C5A059)"
+                        : "#B4945D",
                       color: "white",
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "0.58rem",
@@ -385,7 +389,7 @@ export default function Pricing() {
                       padding: "5px 12px",
                       fontWeight: 600,
                       marginBottom: 16,
-                      boxShadow: plan.featured ? "0 0 16px rgba(26,127,212,0.5)" : "none",
+                      boxShadow: "none",
                     }}
                   >
                     {plan.badge}
@@ -397,7 +401,7 @@ export default function Pricing() {
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontWeight: 800,
                     fontSize: "1.4rem",
-                    color: "var(--text)",
+                    color: plan.featured ? "white" : "var(--text)",
                     marginBottom: 8,
                   }}
                 >
@@ -407,7 +411,7 @@ export default function Pricing() {
                 <p
                   style={{
                     fontSize: "0.83rem",
-                    color: "var(--text-muted)",
+                    color: plan.featured ? "rgba(255,255,255,0.7)" : "var(--text-muted)",
                     lineHeight: 1.65,
                     marginBottom: 24,
                     minHeight: 60,
@@ -429,7 +433,7 @@ export default function Pricing() {
                       fontFamily: "'Plus Jakarta Sans', sans-serif",
                       fontWeight: 900,
                       fontSize: plan.priceUSD && currency !== "USD" ? "2rem" : "2.6rem",
-                      color: plan.featured ? "var(--blue)" : "var(--text)",
+                      color: plan.featured ? "#B4945D" : "var(--text)",
                       letterSpacing: "-0.03em",
                       transition: "font-size 0.2s",
                     }}
@@ -437,7 +441,7 @@ export default function Pricing() {
                     {formatPrice(plan.priceUSD, currency)}
                   </span>
                   {plan.priceSub && (
-                    <span style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
+                    <span style={{ color: plan.featured ? "rgba(255,255,255,0.7)" : "var(--text-muted)", fontSize: "0.9rem" }}>
                       {plan.priceSub}
                       {currency !== "USD" && <span style={{ fontSize: "0.7rem", marginLeft: 4 }}>{currency}</span>}
                     </span>
@@ -449,7 +453,7 @@ export default function Pricing() {
                     fontFamily: "'DM Mono', monospace",
                     fontSize: "0.65rem",
                     letterSpacing: "0.1em",
-                    color: "var(--text-dim)",
+                    color: plan.featured ? "rgba(255,255,255,0.7)" : "var(--text-dim)",
                     marginBottom: 6,
                   }}
                 >
@@ -461,10 +465,10 @@ export default function Pricing() {
                     fontFamily: "'DM Mono', monospace",
                     fontSize: "0.62rem",
                     letterSpacing: "0.08em",
-                    color: "var(--text-muted)",
+                    color: plan.featured ? "rgba(255,255,255,0.7)" : "var(--text-muted)",
                     marginBottom: 28,
                     paddingBottom: 24,
-                    borderBottom: "1px solid var(--border)",
+                    borderBottom: plan.featured ? "1px solid rgba(255,255,255,0.1)" : "1px solid var(--border)",
                     lineHeight: 1.6,
                   }}
                 >
@@ -485,7 +489,7 @@ export default function Pricing() {
                   }}
                 >
                   {plan.features.slice(0, expanded === i ? undefined : 6).map((feat, j) => (
-                    <FeatureItem key={j} feat={feat} />
+                    <FeatureItem key={j} feat={feat} featured={plan.featured} />
                   ))}
                 </ul>
 
@@ -496,7 +500,7 @@ export default function Pricing() {
                       background: "none",
                       border: "none",
                       cursor: "pointer",
-                      color: "var(--blue)",
+                      color: "var(--gold)",
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "0.65rem",
                       letterSpacing: "0.1em",
@@ -519,11 +523,11 @@ export default function Pricing() {
                     fontFamily: "'DM Mono', monospace",
                     fontSize: "0.6rem",
                     letterSpacing: "0.06em",
-                    color: "var(--text-dim)",
+                    color: plan.featured ? "rgba(255,255,255,0.45)" : "var(--text-dim)",
                     marginBottom: 24,
                     lineHeight: 1.6,
                     paddingTop: 16,
-                    borderTop: "1px solid var(--border)",
+                    borderTop: plan.featured ? "1px solid rgba(255,255,255,0.1)" : "1px solid var(--border)",
                   }}
                 >
                   {plan.guarantee}
@@ -537,11 +541,12 @@ export default function Pricing() {
                     display: "block",
                     textAlign: "center",
                     padding: "14px 24px",
-                    background: plan.featured ? "var(--blue)" : "transparent",
+                    background: plan.featured ? "#B4945D" : "transparent",
                     border: plan.featured
-                      ? "1px solid var(--blue)"
+                      ? "1px solid #B4945D"
                       : "1px solid var(--border2)",
                     color: plan.featured ? "white" : "var(--text)",
+                    borderRadius: 8,
                     fontFamily: "'Plus Jakarta Sans', sans-serif",
                     fontWeight: 700,
                     fontSize: "0.88rem",
@@ -552,18 +557,18 @@ export default function Pricing() {
                   onMouseEnter={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     if (plan.featured) {
-                      el.style.background = "#2290e8";
-                      el.style.boxShadow = "0 8px 25px rgba(26,127,212,0.4)";
+                      el.style.background = "#C5A059";
+                      el.style.boxShadow = "none";
                     } else {
-                      el.style.borderColor = "rgba(255,255,255,0.25)";
-                      el.style.background = "rgba(255,255,255,0.04)";
+                      el.style.borderColor = "rgba(15,34,64,0.35)";
+                      el.style.background = "rgba(15,34,64,0.03)";
                     }
                     el.style.transform = "translateY(-1px)";
                   }}
                   onMouseLeave={(e) => {
                     const el = e.currentTarget as HTMLElement;
                     if (plan.featured) {
-                      el.style.background = "var(--blue)";
+                      el.style.background = "#B4945D";
                       el.style.boxShadow = "none";
                     } else {
                       el.style.borderColor = "var(--border2)";
