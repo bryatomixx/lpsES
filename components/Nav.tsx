@@ -48,12 +48,8 @@ export default function Nav() {
           alignItems: "center",
           justifyContent: "space-between",
           transition: "background 0.3s, border-color 0.3s",
-          background: scrolled
-            ? "rgba(2,5,8,0.92)"
-            : "transparent",
-          borderBottom: scrolled
-            ? "1px solid rgba(255,255,255,0.07)"
-            : "1px solid transparent",
+          background: scrolled ? "rgba(255,255,255,0.95)" : "transparent",
+          borderBottom: scrolled ? "1px solid rgba(15,34,64,0.08)" : "1px solid transparent",
           backdropFilter: scrolled ? "blur(20px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(20px)" : "none",
         }}
@@ -91,7 +87,7 @@ export default function Nav() {
                 background: "none",
                 border: "none",
                 cursor: "pointer",
-                color: "var(--text-muted)",
+                color: "rgba(15,34,64,0.55)",
                 fontFamily: "'DM Mono', monospace",
                 fontSize: "0.7rem",
                 letterSpacing: "0.1em",
@@ -99,8 +95,8 @@ export default function Nav() {
                 transition: "color 0.2s",
                 padding: "4px 0",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#0F2240")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(15,34,64,0.55)")}
             >
               {link.label}
             </button>
@@ -115,7 +111,7 @@ export default function Nav() {
             rel="noopener noreferrer"
             style={{
               padding: "9px 20px",
-              background: "var(--blue)",
+              background: "#B4945D",
               color: "white",
               fontFamily: "'Plus Jakarta Sans', sans-serif",
               fontWeight: 700,
@@ -123,18 +119,19 @@ export default function Nav() {
               letterSpacing: "0.02em",
               textDecoration: "none",
               transition: "all 0.25s",
-              boxShadow: "0 0 18px rgba(26,127,212,0.25)",
+              borderRadius: 6,
+              boxShadow: "0 4px 16px rgba(180,148,93,0.28)",
             }}
             className="hidden md:inline-flex items-center btn-glow"
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "var(--blue-bright)";
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 30px rgba(26,127,212,0.5)";
+              (e.currentTarget as HTMLElement).style.background = "#C5A059";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 24px rgba(180,148,93,0.4)";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "var(--blue)";
+              (e.currentTarget as HTMLElement).style.background = "#B4945D";
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
-              (e.currentTarget as HTMLElement).style.boxShadow = "0 0 18px rgba(26,127,212,0.25)";
+              (e.currentTarget as HTMLElement).style.boxShadow = "0 4px 16px rgba(180,148,93,0.28)";
             }}
           >
             Book a Demo
@@ -146,7 +143,7 @@ export default function Nav() {
             className="md:hidden flex flex-col items-center justify-center"
             style={{
               background: "none",
-              border: "1px solid var(--border2)",
+              border: "1px solid rgba(15,34,64,0.2)",
               padding: "8px",
               cursor: "pointer",
               gap: 5,
@@ -160,7 +157,7 @@ export default function Nav() {
                 display: "block",
                 width: 18,
                 height: 1.5,
-                background: "var(--text)",
+                background: "#0F2240",
                 transition: "all 0.3s",
                 transform: menuOpen ? "rotate(45deg) translate(5px, 5px)" : "none",
               }}
@@ -170,7 +167,7 @@ export default function Nav() {
                 display: "block",
                 width: 18,
                 height: 1.5,
-                background: "var(--text)",
+                background: "#0F2240",
                 transition: "all 0.3s",
                 opacity: menuOpen ? 0 : 1,
               }}
@@ -180,7 +177,7 @@ export default function Nav() {
                 display: "block",
                 width: 18,
                 height: 1.5,
-                background: "var(--text)",
+                background: "#0F2240",
                 transition: "all 0.3s",
                 transform: menuOpen ? "rotate(-45deg) translate(5px, -5px)" : "none",
               }}
@@ -203,8 +200,8 @@ export default function Nav() {
               left: 0,
               right: 0,
               zIndex: 99,
-              background: "rgba(2,5,8,0.97)",
-              borderBottom: "1px solid var(--border2)",
+              background: "rgba(255,255,255,0.98)",
+              borderBottom: "1px solid rgba(15,34,64,0.08)",
               padding: "24px",
               backdropFilter: "blur(20px)",
             }}
@@ -222,13 +219,13 @@ export default function Nav() {
                   background: "none",
                   border: "none",
                   cursor: "pointer",
-                  color: "var(--text-muted)",
+                  color: "rgba(15,34,64,0.7)",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontWeight: 600,
                   fontSize: "1.1rem",
                   padding: "14px 0",
                   textAlign: "left",
-                  borderBottom: "1px solid var(--border)",
+                  borderBottom: "1px solid rgba(15,34,64,0.07)",
                 }}
               >
                 {link.label}
@@ -242,13 +239,14 @@ export default function Nav() {
                 display: "block",
                 marginTop: 20,
                 padding: "14px",
-                background: "var(--blue)",
+                background: "#B4945D",
                 color: "white",
                 fontFamily: "'Plus Jakarta Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: "0.9rem",
                 textAlign: "center",
                 textDecoration: "none",
+                borderRadius: 8,
               }}
             >
               Book a Free Demo
