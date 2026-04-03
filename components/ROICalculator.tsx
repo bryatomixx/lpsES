@@ -61,26 +61,6 @@ export default function ROICalculator() {
         padding: "120px 0",
       }}
     >
-      {/* Animated grid background */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(26,127,212,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(26,127,212,0.04) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(2,5,8,0) 0%, var(--surface) 70%)",
-          pointerEvents: "none",
-        }}
-      />
 
       <div className="section-inner" style={{ position: "relative", zIndex: 1 }}>
         <SectionReveal>
@@ -90,15 +70,7 @@ export default function ROICalculator() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", maxWidth: 600 }}
           >
             How Much Is{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <em style={{ fontStyle: "italic", color: "#B4945D" }}>
               Doing Nothing Costing You?
             </em>
           </h2>
@@ -123,9 +95,11 @@ export default function ROICalculator() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              background: "var(--surface2)",
+              background: "#FFFFFF",
               border: "1px solid var(--border)",
+              borderRadius: 12,
               padding: "40px 36px",
+              boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
             }}
           >
             <div
@@ -223,9 +197,10 @@ export default function ROICalculator() {
                     style={{
                       flex: 1,
                       padding: "10px",
-                      background: plan === p.val ? "var(--blue)" : "var(--surface)",
-                      border: `1px solid ${plan === p.val ? "var(--blue)" : "var(--border2)"}`,
+                      background: plan === p.val ? "#B4945D" : "var(--surface2)",
+                      border: `1px solid ${plan === p.val ? "#B4945D" : "var(--border2)"}`,
                       color: plan === p.val ? "white" : "var(--text-muted)",
+                      borderRadius: 6,
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "0.65rem",
                       letterSpacing: "0.1em",
@@ -250,11 +225,13 @@ export default function ROICalculator() {
             {/* Main ROI card */}
             <div
               style={{
-                background: "rgba(26,127,212,0.06)",
-                border: "1px solid rgba(26,127,212,0.2)",
+                background: "#FFFFFF",
+                border: "1px solid var(--border)",
+                borderRadius: 12,
                 padding: "36px 32px",
                 position: "relative",
                 overflow: "hidden",
+                boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
               }}
             >
               <div
@@ -264,7 +241,7 @@ export default function ROICalculator() {
                   left: 0,
                   right: 0,
                   height: 3,
-                  background: "linear-gradient(90deg, var(--blue), var(--gold))",
+                  background: "#B4945D",
                 }}
               />
               <div
@@ -273,7 +250,7 @@ export default function ROICalculator() {
                   fontSize: "0.6rem",
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
-                  color: "var(--blue)",
+                  color: "var(--gold)",
                   marginBottom: 12,
                 }}
               >
@@ -285,10 +262,7 @@ export default function ROICalculator() {
                   fontWeight: 900,
                   fontSize: "clamp(2.5rem, 4vw, 3.8rem)",
                   letterSpacing: "-0.04em",
-                  background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
+                  color: "#0F2240",
                   lineHeight: 1,
                   marginBottom: 6,
                 }}
@@ -313,7 +287,8 @@ export default function ROICalculator() {
                   gap: 10,
                   padding: "10px 16px",
                   background: roi > 0 ? "var(--green-dim)" : "rgba(229,85,85,0.08)",
-                  border: `1px solid ${roi > 0 ? "rgba(0,229,122,0.2)" : "rgba(229,85,85,0.2)"}`,
+                  border: `1px solid ${roi > 0 ? "rgba(0,168,84,0.2)" : "rgba(229,85,85,0.2)"}`,
+                  borderRadius: 8,
                 }}
               >
                 <span style={{ fontSize: "1rem" }}>{roi > 0 ? "🚀" : "📊"}</span>
@@ -347,9 +322,11 @@ export default function ROICalculator() {
             {/* Breakdown */}
             <div
               style={{
-                background: "var(--surface2)",
+                background: "#FFFFFF",
                 border: "1px solid var(--border)",
+                borderRadius: 12,
                 padding: "28px 32px",
+                boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
               }}
             >
               <div
@@ -370,13 +347,13 @@ export default function ROICalculator() {
                   label: "Revenue from recovered leads",
                   value: revenueRecovered,
                   sub: `${recoveredClients} new clients/mo × $${avgValue.toLocaleString()}`,
-                  color: "var(--blue)",
+                  color: "var(--gold)",
                 },
                 {
                   label: "Time saved on admin",
                   value: timeSaved,
                   sub: `${hoursSaved} hrs/mo × $${hourlyRate}/hr`,
-                  color: "var(--gold)",
+                  color: "var(--gold-bright)",
                 },
                 {
                   label: "Plan cost",
@@ -435,10 +412,12 @@ export default function ROICalculator() {
             {/* CTA */}
             <div
               style={{
-                background: "var(--surface2)",
+                background: "#FFFFFF",
                 border: "1px solid var(--border)",
+                borderRadius: 12,
                 padding: "24px 32px",
                 textAlign: "center",
+                boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
               }}
             >
               <p
@@ -458,22 +437,23 @@ export default function ROICalculator() {
                 style={{
                   display: "block",
                   padding: "14px",
-                  background: "var(--blue)",
+                  background: "#B4945D",
                   color: "white",
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: "0.88rem",
                   textDecoration: "none",
+                  borderRadius: 8,
                   transition: "all 0.2s",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "#2290e8";
+                  (e.currentTarget as HTMLElement).style.background = "#C5A059";
                   (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
                   (e.currentTarget as HTMLElement).style.boxShadow =
-                    "0 10px 30px rgba(26,127,212,0.4)";
+                    "0 10px 30px rgba(180,148,93,0.4)";
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "var(--blue)";
+                  (e.currentTarget as HTMLElement).style.background = "#B4945D";
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                   (e.currentTarget as HTMLElement).style.boxShadow = "none";
                 }}
@@ -561,7 +541,7 @@ function SliderInput({
             width: "100%",
             appearance: "none",
             height: 4,
-            background: `linear-gradient(to right, var(--blue) ${pct}%, var(--border2) ${pct}%)`,
+            background: `linear-gradient(to right, #B4945D ${pct}%, var(--border2) ${pct}%)`,
             outline: "none",
             cursor: "pointer",
           }}
@@ -573,10 +553,10 @@ function SliderInput({
           width: 16px;
           height: 16px;
           border-radius: 50%;
-          background: var(--blue);
+          background: #B4945D;
           cursor: pointer;
-          border: 2px solid var(--bg);
-          box-shadow: 0 0 0 2px var(--blue);
+          border: 2px solid #FFFFFF;
+          box-shadow: 0 0 0 2px #B4945D;
           transition: transform 0.2s;
         }
         input[type=range]::-webkit-slider-thumb:hover {
@@ -586,9 +566,9 @@ function SliderInput({
           width: 16px;
           height: 16px;
           border-radius: 50%;
-          background: var(--blue);
+          background: #B4945D;
           cursor: pointer;
-          border: 2px solid var(--bg);
+          border: 2px solid #FFFFFF;
         }
       `}</style>
     </div>
