@@ -73,7 +73,7 @@ export default function Testimonials() {
   return (
     <section
       className="section-wrap"
-      style={{ background: "var(--surface)", overflow: "hidden" }}
+      style={{ background: "var(--bg)", overflow: "hidden" }}
     >
       <div className="section-inner">
         <SectionReveal>
@@ -83,15 +83,7 @@ export default function Testimonials() {
             style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", maxWidth: 600 }}
           >
             What Happens When{" "}
-            <em
-              style={{
-                fontStyle: "italic",
-                background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <em style={{ fontStyle: "italic", color: "#B4945D" }}>
               We Go to Work
             </em>
           </h2>
@@ -101,7 +93,7 @@ export default function Testimonials() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1.2fr",
-            gap: 2,
+            gap: 24,
             marginTop: 16,
           }}
           className="tm-grid"
@@ -109,8 +101,10 @@ export default function Testimonials() {
           {/* Left — Current testimonial */}
           <div
             style={{
-              background: "var(--surface2)",
+              background: "#FFFFFF",
               border: "1px solid var(--border)",
+              borderRadius: 12,
+              boxShadow: "0 2px 8px rgba(15,34,64,0.04), 0 8px 32px rgba(15,34,64,0.07)",
               padding: "44px 40px",
               position: "relative",
               overflow: "hidden",
@@ -127,7 +121,7 @@ export default function Testimonials() {
                 left: 0,
                 right: 0,
                 height: 2,
-                background: "linear-gradient(90deg, var(--blue), var(--gold))",
+                background: "#B4945D",
               }}
             />
 
@@ -147,9 +141,8 @@ export default function Testimonials() {
                     fontFamily: "Georgia, serif",
                     fontSize: "5rem",
                     lineHeight: 0.8,
-                    color: "var(--blue-dim)",
+                    color: "rgba(180,148,93,0.2)",
                     marginBottom: 16,
-                    opacity: 0.4,
                   }}
                 >
                   &ldquo;
@@ -161,7 +154,7 @@ export default function Testimonials() {
                     color: "var(--text)",
                     lineHeight: 1.78,
                     fontStyle: "italic",
-                    fontWeight: 300,
+                    fontWeight: 400,
                     flex: 1,
                     marginBottom: 28,
                   }}
@@ -216,7 +209,7 @@ export default function Testimonials() {
                       marginLeft: "auto",
                       padding: "5px 12px",
                       background: "var(--green-dim)",
-                      border: "1px solid rgba(0,229,122,0.25)",
+                      border: "1px solid rgba(0,168,84,0.2)",
                       fontFamily: "'DM Mono', monospace",
                       fontSize: "0.6rem",
                       letterSpacing: "0.1em",
@@ -250,7 +243,7 @@ export default function Testimonials() {
                     height: 4,
                     border: "none",
                     cursor: "pointer",
-                    background: i === current ? "var(--blue)" : "var(--border2)",
+                    background: i === current ? "#B4945D" : "var(--border2)",
                     transition: "all 0.3s",
                     padding: 0,
                   }}
@@ -263,8 +256,9 @@ export default function Testimonials() {
                     goTo((current - 1 + testimonials.length) % testimonials.length)
                   }
                   style={{
-                    background: "var(--surface)",
+                    background: "#FFFFFF",
                     border: "1px solid var(--border2)",
+                    borderRadius: 6,
                     width: 32,
                     height: 32,
                     cursor: "pointer",
@@ -281,8 +275,9 @@ export default function Testimonials() {
                 <button
                   onClick={next}
                   style={{
-                    background: "var(--surface)",
+                    background: "#FFFFFF",
                     border: "1px solid var(--border2)",
+                    borderRadius: 6,
                     width: 32,
                     height: 32,
                     cursor: "pointer",
@@ -302,7 +297,7 @@ export default function Testimonials() {
 
           {/* Right — Thumbnail list */}
           <div
-            style={{ display: "flex", flexDirection: "column", gap: 2 }}
+            style={{ display: "flex", flexDirection: "column", gap: 24 }}
           >
             {testimonials.map((tm, i) => (
               <motion.button
@@ -310,11 +305,12 @@ export default function Testimonials() {
                 onClick={() => goTo(i)}
                 whileHover={{ x: 4 }}
                 style={{
-                  background: i === current ? "rgba(26,127,212,0.08)" : "var(--surface2)",
+                  background: i === current ? "rgba(180,148,93,0.08)" : "#FFFFFF",
                   border:
                     i === current
-                      ? "1px solid rgba(26,127,212,0.25)"
+                      ? "1px solid rgba(180,148,93,0.25)"
                       : "1px solid var(--border)",
+                  borderRadius: 8,
                   padding: "16px 20px",
                   cursor: "pointer",
                   display: "flex",
@@ -333,7 +329,7 @@ export default function Testimonials() {
                       top: 0,
                       bottom: 0,
                       width: 3,
-                      background: "var(--blue)",
+                      background: "#B4945D",
                     }}
                   />
                 )}
