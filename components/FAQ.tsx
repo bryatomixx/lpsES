@@ -86,15 +86,7 @@ export default function FAQ() {
                 Every Question
                 <br />
                 You&apos;re Thinking{" "}
-                <em
-                  style={{
-                    fontStyle: "italic",
-                    background: "linear-gradient(135deg, var(--blue), var(--gold))",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
+                <em style={{ fontStyle: "italic", color: "#B4945D" }}>
                   Right Now
                 </em>
               </h2>
@@ -125,11 +117,12 @@ export default function FAQ() {
                   fontWeight: 600,
                   fontSize: "0.85rem",
                   textDecoration: "none",
+                  borderRadius: 8,
                   transition: "all 0.2s",
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.3)";
-                  (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.04)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(15,34,64,0.3)";
+                  (e.currentTarget as HTMLElement).style.background = "rgba(15,34,64,0.03)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor = "var(--border2)";
@@ -187,11 +180,12 @@ export default function FAQ() {
                         flexShrink: 0,
                         width: 28,
                         height: 28,
-                        border: `1px solid ${open === i ? "var(--blue)" : "var(--border2)"}`,
+                        border: `1px solid ${open === i ? "var(--gold)" : "var(--border2)"}`,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: open === i ? "var(--blue)" : "var(--text-dim)",
+                        color: open === i ? "var(--gold)" : "var(--text-dim)",
+                        borderRadius: 6,
                         fontSize: "1.2rem",
                         fontWeight: 300,
                         transition: "border-color 0.2s, color 0.2s",
