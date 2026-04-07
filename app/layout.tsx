@@ -118,7 +118,7 @@ const jsonLd = [
           "@type": "Offer",
           name: "Starter Plan",
           description:
-            "CRM with 2 pipelines, AI chat widget, online booking system, automated follow-up via email and SMS, welcome sequence, 1 custom automation, Google Business Profile setup, monthly performance report, and email support. Professional website included.",
+            "CRM with 2 pipelines, AI chat widget, online booking system, automated follow-up via email and SMS, welcome sequence, 1 custom automation, Google Business Profile setup, monthly performance report, and email support.",
           price: "497",
           priceCurrency: "USD",
           priceSpecification: {
@@ -132,7 +132,7 @@ const jsonLd = [
           "@type": "Offer",
           name: "Pro Plan",
           description:
-            "Everything in Starter with unlimited pipelines and flows, unlimited custom automations, advanced AI chat connected to CRM, sales pipeline with automatic nurturing, calendar integration with no-show prevention, dormant client reactivation, Facebook Lead Ads to CRM, automated Instagram DMs, WhatsApp Business API, complete sales funnel, reputation management, Stripe payment integration, and priority support.",
+            "Everything in Starter with unlimited pipelines and flows, professional website designed and connected to CRM, website hosting and maintenance, unlimited custom automations, advanced AI chat connected to CRM, sales pipeline with automatic nurturing, calendar integration with no-show prevention, dormant client reactivation, Facebook Lead Ads to CRM, automated Instagram DMs, WhatsApp Business API, complete sales funnel, reputation management, Stripe payment integration, and priority support.",
           price: "997",
           priceCurrency: "USD",
           priceSpecification: {

@@ -71,8 +71,6 @@ const plans: Plan[] = [
     cta: "Get Started",
     ctaHref: STARTER_PAYMENT,
     features: [
-      "Professional website — designed, connected to your CRM, ready in 7 days",
-      "Website hosting & maintenance — no extra costs",
       "CRM with up to 2 pipelines — know exactly where every client stands",
       "AI chat widget on your site — captures leads and books appointments while you sleep",
       "Online booking system — clients schedule themselves, no back-and-forth calls",
@@ -102,6 +100,8 @@ const plans: Plan[] = [
     ctaHref: PRO_PAYMENT,
     features: [
       "Everything in Starter — unlimited pipelines & flows",
+      "Professional website — designed, connected to your CRM, ready in 7 days",
+      "Website hosting & maintenance — no extra costs",
       { section: "── UNLIMITED AUTOMATIONS ──" },
       "Unlimited custom automations — your entire back-office handled automatically",
       "Advanced AI chat — connected to CRM, qualifies leads and books appointments",
