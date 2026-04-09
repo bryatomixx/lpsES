@@ -34,9 +34,9 @@ export default function Home() {
         <Solutions />
         <div className="gdiv" />
 
-        {/* 5. Tech Stack — refuerza credibilidad con las plataformas reales */}
-        <TechStack />
-        <div className="gdiv" />
+        {/* 5. Tech Stack — temporalmente oculto (iconos pendientes en negro) */}
+        {/* <TechStack /> */}
+        {/* <div className="gdiv" /> */}
 
         {/* 6. ROI Calculator — cuantifica valor antes de mostrar precio */}
         <ROICalculator />
