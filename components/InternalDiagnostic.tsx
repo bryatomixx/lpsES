@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 interface DS {
@@ -101,6 +101,17 @@ export default function InternalDiagnostic() {
   const [clicks, setClicks]       = useState(0);
   const [showGate, setShowGate]   = useState(false);
   const [authed, setAuthed]       = useState(false);
+
+  // ── Keyboard shortcut: Shift+Alt+D ──
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.shiftKey && e.altKey && e.key === "D") {
+        setShowGate(true);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
   const [pw, setPw]               = useState("");
   const [pwErr, setPwErr]         = useState(false);
   const [step, setStep]           = useState(0);
@@ -209,11 +220,11 @@ Latin Prime Systems
   // ─────────────────────────────────────────────────────────────────────────
   return (
     <>
-      {/* ── Hidden trigger dot — bottom-right corner ── */}
+      {/* ── Hidden trigger dot — bottom-right corner (faint gold dot, only LPS knows it's here) ── */}
       <div
         onClick={handleDot}
         title=""
-        style={{ position:"fixed", bottom:12, right:12, width:16, height:16, cursor:"default", zIndex:9998, borderRadius:"50%", background:"transparent" }}
+        style={{ position:"fixed", bottom:14, right:14, width:10, height:10, cursor:"default", zIndex:9998, borderRadius:"50%", background:"rgba(212,165,58,0.25)", border:"1px solid rgba(212,165,58,0.35)", transition:"opacity 0.2s", opacity: clicks > 0 ? 1 : 0.6 }}
         aria-hidden="true"
       />
 
